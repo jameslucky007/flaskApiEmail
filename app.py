@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 #For API handler (react)
 
+=======
+>>>>>>> 2b5e4addcda79bbdadea8aefbf5347084906e99c
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
 
 app = Flask(__name__)
+<<<<<<< HEAD
 CORS(app)  # Allows communication between React and Flask
 
 # Load the saved machine learning model and vectorizer
+=======
+CORS(app) 
+>>>>>>> 2b5e4addcda79bbdadea8aefbf5347084906e99c
 model = pickle.load(open('logistic_regression.pkl', 'rb'))
 feature_extraction = pickle.load(open('feature_extraction.pkl', 'rb'))
 
@@ -33,6 +40,7 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run()
 
 
@@ -88,3 +96,8 @@ if __name__ == '__main__':
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+=======
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=8080)
+    app.run(host='0.0.0.0', debug=True)
+>>>>>>> 2b5e4addcda79bbdadea8aefbf5347084906e99c
